@@ -8,7 +8,8 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image, Button, FlatList, TouchableOpacity, ScrollView} from 'react-native';
-
+import Icon from "react-native-vector-icons/FontAwesome5";
+import Icon2 from "react-native-vector-icons/FontAwesome";
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -53,6 +54,46 @@ export default class App extends Component<Props> {
           </View>
           <Text style={styles.heading}>
             Go solar in 3 easy steps 
+          </Text>
+          <View style={styles.separator2}></View>
+          <View style={styles.icon}>
+            <Icon
+              name="keyboard"
+              color="#ccc"
+              size={100}
+            />
+          </View>
+          <Text style={styles.heading2}>
+            Tell us about your home
+          </Text>
+          <Text style={styles.content}>
+            {"All we need is your address and your average electric bill. We'll worry about the rest."}
+          </Text>
+          <View style={styles.icon}>
+            <Icon
+              name="clock"
+              color="#ccc"
+              size={100}
+            />
+          </View>
+          <Text style={styles.heading2}>
+            Get a quote in seconds
+          </Text>
+          <Text style={styles.content}>
+            {"Thanks to our innovative AI technology, we are able to match you with the best solar providers in your area and offer you the best system for your needs."}
+          </Text>
+          <View style={styles.icon}>
+            <Icon2
+              name="gear"
+              color="#ccc"
+              size={100}
+            />
+          </View>
+          <Text style={styles.heading2}>
+            Enjoy your Solar System
+          </Text>
+          <Text style={styles.content}>
+            {"Get a top of the line solar system in just a few minutes and start saving right away."}
           </Text>
         </ScrollView>
         <View style={styles.separator}></View>
@@ -150,12 +191,41 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   heading: {
-    fontSize: 20,
-    margin: 10,
+    fontSize: 24,
+    fontWeight: 'bold',
+    margin: 30,
+    textAlign: 'center',
+  },
+  heading2: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginTop: 30,
+    marginBottom: 10,
+    textAlign: 'center',
   },
   separator: {
     width: '100%',
     height: 1,
     backgroundColor: 'lightgray',
   },
+  separator2: {
+    width: '10%',
+    height: 3,
+    backgroundColor: 'pink',
+    alignSelf: 'center',
+  },
+  icon: {
+    width: '100%',
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 20,
+  },
+  content: {
+    fontSize:16,
+    color: 'lightgray',
+    marginBottom: 30,
+    marginLeft: 10,
+    marginRight: 10,
+    textAlign: 'center',
+  }
 });
