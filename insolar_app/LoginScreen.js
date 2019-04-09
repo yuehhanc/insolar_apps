@@ -35,7 +35,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text> About Us </Text>
+        <Text> Login </Text>
       </View>
     );
   }

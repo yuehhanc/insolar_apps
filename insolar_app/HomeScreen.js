@@ -20,7 +20,7 @@ type Props = {};
 export default class App extends Component<Props> {
   state = {
     navibar_items: [
-      {name: 'About Us'},
+      {name: 'AboutUs'},
       {name: 'Press'},
       {name: 'Partners'},
       {name: 'Resources'},
@@ -30,7 +30,7 @@ export default class App extends Component<Props> {
 
   handleNavBarTap = item => {
     console.log(item.name);
-    this.props.navigation.navigate('AboutUs');
+    this.props.navigation.navigate(item.name);
   }
 
   render() {

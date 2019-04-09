@@ -11,11 +11,18 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import HomeScreen from './HomeScreen';
 import AboutUsScreen from './AboutUsScreen';
+import PressScreen from './PressScreen';
+import PartnersScreen from './PartnersScreen';
+import ResourcesScreen from './ResourcesScreen';
+import LoginScreen from './LoginScreen';
 
 const MainNavigator = createStackNavigator({
     Home: {screen: HomeScreen},
     AboutUs: {screen: AboutUsScreen},
-  
+    Press: {screen: PressScreen},
+    Partners: {screen: PartnersScreen},
+    Resources: {screen: ResourcesScreen},
+    Login: {screen: LoginScreen},
 });
 
 const App = createAppContainer(MainNavigator);
