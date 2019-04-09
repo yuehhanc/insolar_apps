@@ -30,40 +30,12 @@ export default class App extends Component<Props> {
 
   handleNavBarTap = item => {
     console.log(item.name);
-    this.props.navigation.navigate('AboutUs');
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.INSOLAR_logo} source={require('./static/img/INSOLAR-logo.png')} />
-        <View style={styles.bg} >
-          <Image style={styles.bg_img} source={require('./static/img/solar_board.jpeg')} />
-          <Text style={styles.slogan_1} >Going Solar</Text>
-          <Text style={styles.slogan_2} >Made Easy</Text>
-          <Text style={styles.slogan_3} >Same Installers, Same Panels. Better Prices</Text>
-          <View style={styles.btn_container}>
-            <Button
-              //onPress={this.buttonClickListener}
-              title="Get Free Proposal"
-              color="#FFFFFF"
-            />
-          </View>
-        </View>
-        <FlatList
-          horizontal={ true } 
-          data={ this.state.navibar_items }
-          keyExtractor={ item => item.name }
-          renderItem={
-            ({item}) =>
-              <TouchableOpacity
-                style={styles.nav_btn_container}
-                onPress={() => this.handleNavBarTap(item)}
-              >
-                <Text style={styles.nav_text}> {item.name} </Text>
-              </TouchableOpacity>
-          }
-        />
+        <Text> Another Screen </Text>
       </View>
     );
   }
