@@ -39,6 +39,10 @@ module.exports = StyleSheet.create({
     margin: 10,
     backgroundColor: 'white',
   },
+  bg_innerblock2: {
+    backgroundColor:'white',
+    margin: 5,
+  },
   bg_fourthblock: {
     backgroundColor: '#DCDCDC',
     width: '100%',
@@ -78,6 +82,14 @@ module.exports = StyleSheet.create({
     width: "60%",
     position: 'absolute',
     top: 420,
+    alignSelf: 'center',
+    backgroundColor: "#54B948",
+    borderRadius: 5,
+  },
+  btn_container2: {
+    width: "60%",
+    position: 'absolute',
+    top: 150,
     alignSelf: 'center',
     backgroundColor: "#54B948",
     borderRadius: 5,
@@ -131,6 +143,13 @@ module.exports = StyleSheet.create({
     marginTop: 30,
     marginBottom: 10,
     textAlign: 'center',
+  },
+  heading6: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    margin: 15,
+    textAlign: 'left',
+    color: '#FF69B4',
   },
   separator: {
     width: '100%',
@@ -194,6 +213,11 @@ module.exports = StyleSheet.create({
     marginTop: 20,
     marginRight: 10,
     textAlign: 'left',
+  },
+  side_img: {
+    margin: 5,
+    width: '100%',
+    height: 300,
   },
   
 });
