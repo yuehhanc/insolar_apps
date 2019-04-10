@@ -34,6 +34,12 @@ export default class App extends Component<Props> {
       {text: 'Most Affordable Prices'},
       {text: '100% Transparency'},
     ],
+    why_us: [
+      {text: 'Save More'},
+      {text: 'Transparent Process'},
+      {text: 'Shortest Patback Period'},
+      {text: 'Simple Online Purchase'},
+    ],
   }
 
   handleNavBarTap = item => {
@@ -210,11 +216,74 @@ export default class App extends Component<Props> {
           </Text>
           <Text style={styles.content4} >WARRANTY</Text>
 
+          <View>
+            <Text style={styles.heading}>
+              Resources
+            </Text>
+            <View style={styles.separator2}></View>
 
-          <Text style={styles.heading}>
-            Resources
-          </Text>
-          <View style={styles.separator2}></View>
+
+            <View style={styles.article_block} >
+              <TouchableOpacity>
+                <Image style={{width: '100%', height: 300,}} source={require('./static/img/clouds-and-panels2.jpg')} />
+                <Text style={{width: '100%', backgroundColor: 'white', textAlign: 'center', color: 'black', fontSize: 20, fontWeight: 'bold',}}> Are Solar Panels Actually Worth It? </Text>
+                <Text style={{width: '100%', backgroundColor: 'white', textAlign: 'center', color: '#FF69B4', fontSize: 16, marginBottom: 20,}}> Publushed November 28, 2018 </Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Image style={{width: '100%', height: 300,}} source={require('./static/img/alternative-energy-environment-power-356060.jpg')} />
+                <Text style={{width: '100%', backgroundColor: 'white', textAlign: 'center', color: 'black', fontSize: 20, fontWeight: 'bold',}}> Do Solar Panels Still Work At Night? </Text>
+                <Text style={{width: '100%', backgroundColor: 'white', textAlign: 'center', color: '#FF69B4', fontSize: 16, marginBottom: 20,}}> Publushed November 28, 2018 </Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <Image style={{width: '100%', height: 300,}} source={require('./static/img/afterglow-alternative-energy-clouds-532192.jpg')} />
+                <Text style={{width: '100%', backgroundColor: 'white', textAlign: 'center', color: 'black', fontSize: 20, fontWeight: 'bold',}}> {"How Solar Panels Can Actually Raise Your House's Value?"} </Text>
+                <Text style={{width: '100%', backgroundColor: 'white', textAlign: 'center', color: '#FF69B4', fontSize: 16, marginBottom: 20,}}> Publushed November 28, 2018 </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+
+          <View >
+            <Text style={styles.heading}>
+              {"We'd love to hear from you!"}
+            </Text>
+            <View style={styles.separator2}></View>
+            <Text style={styles.heading2}>
+              {"Contact Us"}
+            </Text>
+            <TouchableOpacity>
+              <View style={{flexDirection: 'row', padding: 20, alignSelf: 'center',}} >
+                <Icon3
+                  name="ios-mail"
+                  color="#54B948"
+                  size={25}
+                />
+                <Text style={{margin: 5}}>
+                  {"support@getinsolar.com"}
+                </Text>
+              </View>
+            </TouchableOpacity>
+            <Text style={styles.heading2}>
+              {"Why Us"}
+            </Text>
+            <FlatList
+              data={ this.state.why_us }
+              keyExtractor={ item => item.text }
+              renderItem={
+                ({item}) =>
+                  <View>
+                    <View style={{flexDirection: 'row', padding: 20}} >
+                      <Icon
+                        name="check"
+                        color="#FF69B4"
+                      />
+                      <Text> {item.text} </Text>
+                    </View>
+                    <View style={styles.separator}></View>
+                  </View>
+              }
+            />
+          </View>
         </ScrollView>
 
 
@@ -276,6 +345,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightgray',
     width: '100%',
     padding: 7,
+  },
+  article_block: {
+    margin: 10,
+    backgroundColor: '#F5FCFF',
   },
   slogan_1: {
     position: 'absolute',
