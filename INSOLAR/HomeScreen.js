@@ -10,6 +10,7 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Image, Button, FlatList, TouchableOpacity, ScrollView} from 'react-native';
 import Icon from "react-native-vector-icons/FontAwesome5";
 import Icon2 from "react-native-vector-icons/FontAwesome";
+import Icon3 from "react-native-vector-icons/Ionicons";
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -21,11 +22,17 @@ type Props = {};
 export default class App extends Component<Props> {
   state = {
     navibar_items: [
-      {name: 'AboutUs', text: 'About Us'},
+      {name: 'AboutUs', text: 'About'},
       {name: 'Press', text: 'Press'},
       {name: 'Partners', text: 'Partners'},
       {name: 'Resources', text: 'Resources'},
       {name: 'Login', text: 'Login'},
+    ],
+    advantages: [
+      {text: 'Powered by AI'},
+      {text: '1-2-3 Sales Process'},
+      {text: 'Most Affordable Prices'},
+      {text: '100% Transparency'},
     ],
   }
 
@@ -52,6 +59,8 @@ export default class App extends Component<Props> {
               />
             </View>
           </View>
+
+
           <Text style={styles.heading}>
             Go solar in 3 easy steps 
           </Text>
@@ -59,7 +68,7 @@ export default class App extends Component<Props> {
           <View style={styles.icon}>
             <Icon
               name="keyboard"
-              color="#ccc"
+              color="#FF69B4"
               size={100}
             />
           </View>
@@ -72,7 +81,7 @@ export default class App extends Component<Props> {
           <View style={styles.icon}>
             <Icon
               name="clock"
-              color="#ccc"
+              color="#FF69B4"
               size={100}
             />
           </View>
@@ -85,7 +94,7 @@ export default class App extends Component<Props> {
           <View style={styles.icon}>
             <Icon2
               name="gear"
-              color="#ccc"
+              color="#FF69B4"
               size={100}
             />
           </View>
@@ -95,7 +104,120 @@ export default class App extends Component<Props> {
           <Text style={styles.content}>
             {"Get a top of the line solar system in just a few minutes and start saving right away."}
           </Text>
+
+
+          <View style={styles.bg_thirdblock} >
+            <View style={styles.bg_innerblock}>
+              <Text style={styles.heading}>
+                Experience affordable solar energy in seconds
+              </Text>
+              <View style={styles.separator3} ></View>
+              <Text style={styles.content2}>
+                {"At INSOLAR, we believe there is a better way to go solar. A simpler, less expensive way. So we built an easy to use online shopping platform using AI."}
+              </Text>
+              <Text style={styles.content2}>
+                {"INSOLAR is the industry’s only solution that guarantees the lowest price for the installation of the latest solar technology by the best local installers. The platform also instantly retrieves the best industry warranties with the longest coverage and all federal, state, local and cash rebates available for each project."}
+              </Text>
+            </View>
+          </View>
+
+          <View style={styles.bg_fourthblock} >
+            <View style={styles.bg_innerblock}>
+              <View style={styles.icon}>
+                <Icon3
+                  name="ios-square-outline"
+                  color="#1E90FF"
+                  size={100}
+                />
+              </View>
+              <Text style={styles.heading2}>
+                25 Year Warranty
+              </Text>
+              <View style={styles.separator2}></View>
+              <Text style={styles.content3} >
+                {"We screen installers and scrutinize warranties so you don’t have to worry about a thing."}
+              </Text>
+            </View>
+            <View style={styles.bg_innerblock}>
+              <View style={styles.icon}>
+                <Icon2
+                  name="wrench"
+                  color="#1E90FF"
+                  size={100}
+                />
+              </View>
+              <Text style={styles.heading2}>
+                Service and Repairs
+              </Text>
+              <View style={styles.separator2}></View>
+              <Text style={styles.content3} >
+                {"All of our installers are experienced, certified and highly reputable. Their workmanship is of superior quality and they give great customer service."}
+              </Text>
+            </View>
+            <View style={styles.bg_innerblock}>
+              <View style={styles.icon}>
+                <Icon2
+                  name="certificate"
+                  color="#1E90FF"
+                  size={100}
+                />
+              </View>
+              <Text style={styles.heading2}>
+                20 Year Production Guarantee
+              </Text>
+              <View style={styles.separator2}></View>
+              <Text style={styles.content3} >
+                {"All solar systems come with a comprehensive bumper-to-bumper warranty covering workmanship and materials for 25 years with hassle-free replacement, repair or reimbursement for any defective system parts."}
+              </Text>
+            </View>
+          </View>
+
+
+          <Text style={{color: '#FF69B4', fontSize: 12, alignSelf: 'center', marginTop: 30}}>
+            THE INSOLAR DIFFERENCE
+          </Text>
+          <Text style={styles.heading}>
+            The most effective way to go solar
+          </Text>
+          <View style={styles.separator2}></View>
+          <FlatList
+            data={ this.state.advantages }
+            keyExtractor={ item => item.text }
+            renderItem={
+              ({item}) =>
+                <View>
+                  <View style={{flexDirection: 'row', padding: 20}} >
+                    <Icon
+                      name="check"
+                      color="#FF69B4"
+                    />
+                    <Text> {item.text} </Text>
+                  </View>
+                  <View style={styles.separator}></View>
+                </View>
+            }
+          />
+          <Text style={styles.heading3}>
+            3 Year
+          </Text>
+          <Text style={styles.content4} >AVERAGE PAYBACK PERIOD</Text>
+          <Text style={styles.heading3}>
+            $150
+          </Text>
+          <Text style={styles.content4} >AVERAGE MONTLHY SAVINGS</Text>
+          <Text style={styles.heading3}>
+            25 Year
+          </Text>
+          <Text style={styles.content4} >WARRANTY</Text>
+
+
+          <Text style={styles.heading}>
+            Resources
+          </Text>
+          <View style={styles.separator2}></View>
         </ScrollView>
+
+
         <View style={styles.separator}></View>
         <FlatList
           horizontal={ true } 
@@ -141,11 +263,24 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+  bg_thirdblock: {
+    backgroundColor: '#4682B4',
+    width: '100%',
+    padding: 15,
+  },
+  bg_innerblock: {
+    margin: 10,
+    backgroundColor: 'white',
+  },
+  bg_fourthblock: {
+    backgroundColor: 'lightgray',
+    width: '100%',
+    padding: 7,
+  },
   slogan_1: {
     position: 'absolute',
     top: 70,
-    left: 0,
-    right: 0,
+    alignSelf: 'center',
     fontSize: 40,
     textAlign: 'center',
     color: "#FFFFFF",
@@ -154,8 +289,7 @@ const styles = StyleSheet.create({
   slogan_2: {
     position: 'absolute',
     top: 130,
-    left: 0,
-    right: 0,
+    alignSelf: 'center',
     fontSize: 40,
     textAlign: 'center',
     color: "#FFFFFF",
@@ -164,8 +298,7 @@ const styles = StyleSheet.create({
   slogan_3: {
     position: 'absolute',
     top: 350,
-    left: 0,
-    right: 0,
+    alignSelf: 'center',
     fontSize: 18,
     textAlign: 'center',
     color: "#FFFFFF",
@@ -174,9 +307,7 @@ const styles = StyleSheet.create({
     width: "60%",
     position: 'absolute',
     top: 420,
-    left: 0,
-    right: 0,
-    marginLeft: 75,
+    alignSelf: 'center',
     backgroundColor: "#54B948",
     borderRadius: 5,
   },
@@ -188,6 +319,7 @@ const styles = StyleSheet.create({
   },
   nav_text: {
     fontSize: 18,
+    color: 'gray',
     textAlign: 'center',
   },
   heading: {
@@ -197,11 +329,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   heading2: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
     marginTop: 30,
     marginBottom: 10,
     textAlign: 'center',
+  },
+  heading3: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 30,
+    textAlign: 'center',
+    color: 'skyblue',
   },
   separator: {
     width: '100%',
@@ -211,7 +350,13 @@ const styles = StyleSheet.create({
   separator2: {
     width: '10%',
     height: 3,
-    backgroundColor: 'pink',
+    backgroundColor: '#FF69B4',
+    alignSelf: 'center',
+  },
+  separator3: {
+    width: '90%',
+    height: 3,
+    backgroundColor: '#FF69B4',
     alignSelf: 'center',
   },
   icon: {
@@ -222,10 +367,34 @@ const styles = StyleSheet.create({
   },
   content: {
     fontSize:16,
-    color: 'lightgray',
+    color: 'gray',
     marginBottom: 30,
     marginLeft: 10,
     marginRight: 10,
     textAlign: 'center',
-  }
+  },
+  content2: {
+    fontSize: 16,
+    textAlign: 'left',
+    margin: 18,
+  },
+  content3: {
+    fontSize:16,
+    color: 'gray',
+    marginBottom: 30,
+    marginLeft: 10,
+    marginTop: 20,
+    marginRight: 10,
+    textAlign: 'center',
+  },
+  content4: {
+    fontSize:16,
+    color: 'gray',
+    marginBottom: 30,
+    marginLeft: 10,
+    marginTop: 5,
+    marginRight: 10,
+    textAlign: 'center',
+  },
+  
 });
