@@ -94,6 +94,14 @@ module.exports = StyleSheet.create({
     backgroundColor: "#54B948",
     borderRadius: 5,
   },
+  btn_green: {
+    width: "60%",
+    alignSelf: 'center',
+    backgroundColor: "#54B948",
+    borderRadius: 5,
+    marginTop: 15,
+    marginBottom: 50,
+  },
   nav_btn_container: {
     height: 30,
     paddingTop: 3,
