@@ -5,10 +5,10 @@
  * @format
  * @flow
  */
- 
+
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer, createBottomTabNavigator } from 'react-navigation';
 import HomeScreen from './HomeScreen';
 import AboutUsScreen from './AboutUsScreen';
 import PressScreen from './PressScreen';
@@ -16,7 +16,7 @@ import PartnersScreen from './PartnersScreen';
 import ResourcesScreen from './ResourcesScreen';
 import LoginScreen from './LoginScreen';
 
-const MainNavigator = createStackNavigator({
+const MainNavigator = createBottomTabNavigator({
     Home: {screen: HomeScreen},
     AboutUs: {screen: AboutUsScreen},
     Press: {screen: PressScreen},

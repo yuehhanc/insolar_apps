@@ -21,6 +21,7 @@ module.exports = StyleSheet.create({
     alignItems: 'flex-start',
     width: '80%',
     height: 100,
+    marginTop: 30,
   },
   bg: {
     width: '100%',

@@ -295,24 +295,6 @@ export default class App extends Component<Props> {
             />
           </View>
         </ScrollView>
-
-
-        <View style={styles.separator}></View>
-        <FlatList
-          horizontal={ true } 
-          data={ this.state.navibar_items }
-          keyExtractor={ item => item.name }
-          renderItem={
-            ({item}) =>
-              <TouchableOpacity
-                style={styles.nav_btn_container}
-                onPress={() => this.handleNavBarTap(item)}
-              >
-                <Text style={styles.nav_text}> {item.text} </Text>
-              </TouchableOpacity>
-          }
-        />
-        
       </View>
     );
   }
