@@ -7,11 +7,12 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image, Button, FlatList, TouchableOpacity, ScrollView} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image, Button, FlatList, TouchableOpacity, ScrollView, Linking} from 'react-native';
 import Icon from "react-native-vector-icons/FontAwesome5";
 import Icon2 from "react-native-vector-icons/FontAwesome";
 import Icon3 from "react-native-vector-icons/Ionicons";
 import Icon4 from "react-native-vector-icons/MaterialIcons";
+import email from 'react-native-email';
 
 var styles = require('./style');
 
@@ -26,6 +27,17 @@ export default class App extends Component<Props> {
     this.props.navigation.navigate(item.name);
   }
 
+  handleEmail = () => {
+      // const to = ['support@getinsolar.com']
+      // email(to, {
+      //     cc: [],
+      //     bcc: '',
+      //     subject: '',
+      //     body: ''
+      // }).catch(console.error)
+      Linking.openURL('mailto:support@getinsolar.com');
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -34,7 +46,7 @@ export default class App extends Component<Props> {
             <Text style={{alignSelf: 'center', fontSize: 40, color: 'white', fontWeight: 'bold', marginTop:75,}}> Join our network </Text>
             <View style={styles.btn_container2}>
               <Button
-                //onPress={this.buttonClickListener}
+                onPress={() => Linking.openURL('https://ai.getinsolar.com/')}
                 title="APPLY FOR PARTNERSHIP"
                 color="#FFFFFF"
               />
@@ -130,7 +142,7 @@ export default class App extends Component<Props> {
 
           <View style={styles.btn_green}>
             <Button
-              //onPress={this.buttonClickListener}
+              onPress={this.handleEmail}
               title="CONTACT US"
               color="#FFFFFF"
             />

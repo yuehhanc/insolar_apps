@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image, Button, FlatList, TouchableOpacity, ScrollView} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image, Button, FlatList, TouchableOpacity, ScrollView, Linking} from 'react-native';
 import Icon from "react-native-vector-icons/FontAwesome5";
 import Icon2 from "react-native-vector-icons/FontAwesome";
 import Icon3 from "react-native-vector-icons/Ionicons";
@@ -39,8 +39,22 @@ export default class App extends Component<Props> {
   }
 
   handleNavBarTap = item => {
-    console.log(item.name);
-    this.props.navigation.navigate(item.name);
+    if (item.name=='Resources') {
+      Linking.openURL('https://getinsolar.com/solar-resources/');
+    } else {
+      this.props.navigation.navigate(item.name);
+    }
+  }
+
+  handleEmail = () => {
+    // const to = ['support@getinsolar.com']
+    // email(to, {
+    //     cc: [],
+    //     bcc: '',
+    //     subject: '',
+    //     body: ''
+    // }).catch(console.error)
+    Linking.openURL('mailto:support@getinsolar.com');
   }
 
   render() {
@@ -55,7 +69,7 @@ export default class App extends Component<Props> {
             <Text style={styles.slogan_3} >Same Installers, Same Panels. Better Prices</Text>
             <View style={styles.btn_container}>
               <Button
-                //onPress={this.buttonClickListener}
+                onPress={() => Linking.openURL('https://ai.getinsolar.com/')}
                 title="Get Free Proposal"
                 color="#FFFFFF"
               />
@@ -220,17 +234,17 @@ export default class App extends Component<Props> {
 
 
             <View style={styles.article_block} >
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => Linking.openURL('https://getinsolar.com/2018/11/28/are-solar-panels-actually-worth-it/')}>
                 <Image style={{width: '100%', height: 300,}} source={require('./static/img/clouds-and-panels2.jpg')} />
                 <Text style={{width: '100%', backgroundColor: 'white', textAlign: 'center', color: 'black', fontSize: 20, fontWeight: 'bold',}}> Are Solar Panels Actually Worth It? </Text>
                 <Text style={{width: '100%', backgroundColor: 'white', textAlign: 'center', color: '#FF69B4', fontSize: 16, marginBottom: 20,}}> Publushed November 28, 2018 </Text>
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => Linking.openURL('https://getinsolar.com/2018/11/28/do-solar-panels-still-work-at-night/')}>
                 <Image style={{width: '100%', height: 300,}} source={require('./static/img/alternative-energy-environment-power-356060.jpg')} />
                 <Text style={{width: '100%', backgroundColor: 'white', textAlign: 'center', color: 'black', fontSize: 20, fontWeight: 'bold',}}> Do Solar Panels Still Work At Night? </Text>
                 <Text style={{width: '100%', backgroundColor: 'white', textAlign: 'center', color: '#FF69B4', fontSize: 16, marginBottom: 20,}}> Publushed November 28, 2018 </Text>
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => Linking.openURL('https://getinsolar.com/2018/11/28/how-solar-panels-can-actually-raise-your-houses-value/')}>
                 <Image style={{width: '100%', height: 300,}} source={require('./static/img/afterglow-alternative-energy-clouds-532192.jpg')} />
                 <Text style={{width: '100%', backgroundColor: 'white', textAlign: 'center', color: 'black', fontSize: 20, fontWeight: 'bold',}}> {"How Solar Panels Can Actually Raise Your House's Value?"} </Text>
                 <Text style={{width: '100%', backgroundColor: 'white', textAlign: 'center', color: '#FF69B4', fontSize: 16, marginBottom: 20,}}> Publushed November 28, 2018 </Text>
@@ -247,7 +261,7 @@ export default class App extends Component<Props> {
             <Text style={styles.heading2}>
               {"Contact Us"}
             </Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.handleEmail} >
               <View style={{flexDirection: 'row', padding: 20, alignSelf: 'center',}} >
                 <Icon3
                   name="ios-mail"
