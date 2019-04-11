@@ -1,6 +1,4 @@
 # insolar_apps
-FORKaiA project
-
 Required Packages
 
 react-navigation
