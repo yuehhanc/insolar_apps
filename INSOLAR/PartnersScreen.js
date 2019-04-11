@@ -41,6 +41,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.separator, {marginTop:40,}}></View>
         <ScrollView style={styles.scrollable_container}>
           <View style={{width: '100%', height: 250, backgroundColor:'coral'}}>
             <Text style={{alignSelf: 'center', fontSize: 40, color: 'white', fontWeight: 'bold', marginTop:75,}}> Join our network </Text>

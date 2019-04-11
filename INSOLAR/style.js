@@ -95,6 +95,14 @@ module.exports = StyleSheet.create({
     backgroundColor: "#54B948",
     borderRadius: 5,
   },
+  btn_container3: {
+    width: "60%",
+    position: 'absolute',
+    top: 180,
+    alignSelf: 'center',
+    backgroundColor: "#54B948",
+    borderRadius: 5,
+  },
   btn_green: {
     width: "60%",
     alignSelf: 'center',

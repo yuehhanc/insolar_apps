@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image, Button, FlatList, TouchableOpacity, ScrollView} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image, Button, FlatList, TouchableOpacity, ScrollView, Linking} from 'react-native';
 import Icon from "react-native-vector-icons/FontAwesome5";
 import Icon2 from "react-native-vector-icons/FontAwesome";
 import Icon3 from "react-native-vector-icons/Ionicons";
@@ -29,18 +29,18 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+        <Image style={{marginTop:200,width: '80%',height: 100,}} source={require('./static/img/INSOLAR-logo.png')} />
         <ScrollView style={styles.scrollable_container}>
-          <View style={{width: '100%', height: 250, backgroundColor:'coral'}}>
-            <Text style={{alignSelf: 'center', fontSize: 40, color: 'white', fontWeight: 'bold', marginTop:75,}}> Join our network </Text>
-            <View style={styles.btn_container2}>
-              <Button
-                //onPress={this.buttonClickListener}
-                title="APPLY FOR PARTNERSHIP"
-                color="#FFFFFF"
-              />
-            </View>
+          <View style={{width: '100%', height: 250, backgroundColor:'deeppink',}}>
+            <Text style={{alignSelf: 'center', fontSize: 40, color: 'white', fontWeight: 'bold', marginTop:75,}}> Resources </Text>
           </View>
-
+          <View style={styles.btn_container3}>
+            <Button
+              onPress={() => Linking.openURL('https://getinsolar.com/solar-resources/')}
+              title="See More"
+              color="#FFFFFF"
+            />
+          </View>
         </ScrollView>
       </View>
     );
