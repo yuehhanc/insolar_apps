@@ -47,7 +47,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.separator, {marginTop:40,}}></View>
+        <Image style={styles.INSOLAR_logo} source={require('./static/img/INSOLAR-logo.png')} />
         <ScrollView style={styles.scrollable_container}>
           <View style={{width: '100%', height: 200, backgroundColor:'#00BFFF'}}>
             <Text style={{alignSelf: 'center', fontSize: 40, color: 'white', fontWeight: 'bold', marginTop:75,}}> About Us </Text>
