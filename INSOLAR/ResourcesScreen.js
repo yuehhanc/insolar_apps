@@ -29,7 +29,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Image style={{marginTop:200,width: '80%',height: 100,}} source={require('./static/img/INSOLAR-logo.png')} />
+        <Image style={{marginTop:100,width: '80%',height: 100,}} source={require('./static/img/INSOLAR-logo.png')} />
         <ScrollView style={styles.scrollable_container}>
           <View style={{width: '100%', height: 250, backgroundColor:'deeppink',}}>
             <Text style={{alignSelf: 'center', fontSize: 40, color: 'white', fontWeight: 'bold', marginTop:75,}}> Resources </Text>
