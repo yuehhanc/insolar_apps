@@ -37,7 +37,7 @@ export default class App extends Component<Props> {
           <View style={styles.btn_container3}>
             <Button
               onPress={() => Linking.openURL('https://getinsolar.com/solar-resources/')}
-              title="See More"
+              title="SEE MORE"
               color="#FFFFFF"
             />
           </View>
