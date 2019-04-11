@@ -1,8 +1,8 @@
 # insolar_apps
 FORKaiA project
 
-Required Packages
-react-navigation
-react-native-vector-icons
-react-native-elements
-react-native-email
+Required Packages\n
+react-navigation\n
+react-native-vector-icons\n
+react-native-elements\n
+react-native-email\n
