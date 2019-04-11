@@ -18,7 +18,7 @@ import LoginScreen from './LoginScreen';
 
 const MainNavigator = createBottomTabNavigator({
     Home: {screen: HomeScreen},
-    AboutUs: {screen: AboutUsScreen},
+    About: {screen: AboutUsScreen},
     Press: {screen: PressScreen},
     Partners: {screen: PartnersScreen},
     Resources: {screen: ResourcesScreen},
